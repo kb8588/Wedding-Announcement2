@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kerbie & Cory — We're Getting Married</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
+<title>Kerbie & Cory — Last Call for The Toast Abroad</title>
+<link href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Pinyon+Script&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -121,22 +121,62 @@
     animation: fadeUp 0.8s 0.1s ease both;
   }
 
-  /* Names */
-  .names {
-    font-family: 'Great Vibes', cursive;
-    font-weight: 400;
-    font-size: clamp(52px, 14vw, 80px);
-    line-height: 1.05;
-    color: var(--cream);
-    letter-spacing: 0.02em;
-    margin-bottom: 6px;
+  /* Monogram */
+  .monogram-wrap {
+    margin-bottom: 24px;
     animation: fadeUp 0.9s 0.2s ease both;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .names .amp {
+  .monogram {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .monogram-k, .monogram-c {
+    position: absolute;
+    font-family: 'Lovers Quarrel', cursive;
+    font-size: 150px;
+    line-height: 1;
+    color: var(--cream);
+    top: 0;
+    user-select: none;
+  }
+  .monogram-amp {
+    position: absolute;
+    font-family: 'Lovers Quarrel', cursive;
+    font-size: 70px;
+    line-height: 1;
     color: var(--heather-light);
-    font-size: 0.75em;
-    display: block;
-    margin: -6px 0;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    user-select: none;
+  }
+  .monogram-k {
+    left: 8px;
+    z-index: 1;
+  }
+  .monogram-c {
+    right: 8px;
+    top: 10px;
+    z-index: 2;
+    color: rgba(242,237,230,0.88);
+  }
+  .full-names {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mist);
+    text-align: center;
   }
 
   /* Tagline */
@@ -314,19 +354,18 @@
 
   /* Closing */
   .closing {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 18px;
-    font-weight: 300;
-    color: var(--mist);
-    margin-bottom: 6px;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 54px;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 4px;
     animation: fadeUp 0.9s 0.7s ease both;
   }
   .closing-names {
     font-family: 'Great Vibes', cursive;
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 400;
-    color: var(--cream);
+    color: var(--mist);
     letter-spacing: 0.02em;
     animation: fadeUp 0.9s 0.75s ease both;
     margin-bottom: 32px;
@@ -353,10 +392,19 @@
   }
   .zola-block { animation-delay: 0.7s; }
   .secondary-label {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 19px;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+  .zola-label {
+    font-family: 'Raleway', sans-serif;
     font-weight: 200;
-    font-size: 9.5px;
-    letter-spacing: 0.35em;
+    font-size: 10px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--heather-light);
     margin-bottom: 10px;
@@ -380,6 +428,77 @@
     border-left: 2px solid rgba(107,78,110,0.4);
     padding-left: 14px;
     margin-top: 4px;
+  }
+
+  /* Last Call Banner */
+  .banner {
+    width: 100%;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+    position: relative;
+  }
+  .banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--heather), transparent);
+  }
+  .banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--heather), transparent);
+  }
+  .banner-inner {
+    background: linear-gradient(135deg, rgba(107,78,110,0.18) 0%, rgba(35,30,43,0.8) 50%, rgba(107,78,110,0.12) 100%);
+    border: 1px solid rgba(107,78,110,0.35);
+    border-top: none;
+    border-bottom: none;
+    padding: 22px 24px 20px;
+  }
+  .banner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(22px, 6vw, 30px);
+    color: var(--cream);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .banner-title span {
+    color: var(--heather-light);
+  }
+  .banner-deadlines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .banner-deadline-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .banner-deadline-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--heather-light);
+    flex-shrink: 0;
+    margin-bottom: 2px;
+  }
+  .banner-deadline-text {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--mist);
+    line-height: 1.5;
+  }
+  .banner-deadline-text strong {
+    font-weight: 400;
+    color: var(--cream);
   }
 
   /* Countdown */
@@ -515,15 +634,30 @@
       <div class="rule right"></div>
     </div>
 
-    <div class="eyebrow">An Announcement from</div>
-
-    <div class="names">
-      Kerbie
-      <span class="amp">&</span>
-      Cory
+    <div class="banner">
+      <div class="banner-inner">
+        <div class="banner-title">The Toast Abroad — <span>Last Call!</span></div>
+        <div class="banner-deadlines">
+          <div class="banner-deadline-row">
+            <div class="banner-deadline-dot"></div>
+            <div class="banner-deadline-text">Final day for video submissions: <strong>September 22nd, 2026</strong></div>
+          </div>
+          <div class="banner-deadline-row">
+            <div class="banner-deadline-dot"></div>
+            <div class="banner-deadline-text">Final day to mail letters &amp; cards: <strong>August 17th, 2026</strong></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="tagline">The Wedding Countdown Begins...</div>
+    <div class="monogram-wrap">
+      <div class="monogram">
+        <span class="monogram-k">K</span>
+        <span class="monogram-amp">&</span>
+        <span class="monogram-c">C</span>
+      </div>
+      <div class="full-names">Kerbie Dixon &amp; Cory Campbell</div>
+    </div>
 
     <div class="divider">
       <div class="divider-line"></div>
@@ -580,21 +714,15 @@
       <div class="cta-label">Your invitation to participate</div>
       <div class="cta-heading">Record us a video message</div>
       <div class="cta-body">
-        The link below will take you to a website where you can upload a short video — however long feels right. No script needed. Just you, wishing us well across the Atlantic. We'll watch them together in Scotland after we tie the knot. 🏴󠁧󠁢󠁳󠁣󠁴󠁿
+        The link below will take you to a website where you can upload a short video — however long feels right. No script needed. Just you, sending us off from wherever you are. We want to make sure every voice we love makes it into the collection before we say our vows. We'll watch them together in Scotland after we tie the knot. 🏴󠁧󠁢󠁳󠁣󠁴󠁿
         <br><br>
         <strong>🎥 <a href="https://share.vidday.com/e/w-aht42f" style="color: var(--heather-light); text-decoration: underline; text-underline-offset: 3px;">share.vidday.com/e/w-aht42f</a></strong><br>
         <span style="font-size:12px; letter-spacing:0.08em; color: rgba(194,191,200,0.6);">PASSWORD: korbie2026</span>
-        <br><br>
-        <strong>Haven't submitted yours yet?</strong> There's still time — but don't wait too long! We want to make sure every voice we love makes it into the collection before we say our vows.
-      </div>
-      <div class="deadline">
-        <div class="deadline-label">Submit by</div>
-        <div class="deadline-date">September 22nd, 2026</div>
       </div>
     </div>
 
     <div class="secondary-block">
-      <div class="secondary-label">Written letters also welcome</div>
+      <div class="secondary-label">For the pen & paper folks...we cherish letters or cards, too!</div>
       <div class="secondary-body">
         Please send by <strong>August 17th</strong> so we can add them to the suitcase!
       </div>
@@ -606,7 +734,7 @@
     </div>
 
     <div class="zola-block">
-      <div class="secondary-label">Visit our wedding website</div>
+      <div class="zola-label">Visit our wedding website</div>
       <div class="secondary-body">
         View more information, follow along for photos from our trip, and find our registry if you feel moved to gift — though this is absolutely not required. Your love and support is plenty!
       </div>
@@ -616,8 +744,8 @@
       </div>
     </div>
 
-    <div class="closing">With so much love,</div>
-    <div class="closing-names">Kerbie & Cory</div>
+    <div class="closing">Slàinte mhath!</div>
+    <div class="closing-names">Cory & Kerbie</div>
 
     <div class="bottom-ornament">
       <div class="rule"></div>
